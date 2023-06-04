@@ -1,4 +1,5 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
+import AuthContext from "../../store/auth-context";
 
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
@@ -59,6 +60,8 @@ const Login = (props) => {
     isValid: null,
   });
 
+  const authContext = useContext(AuthContext);
+
   //We need to pull the value out  from state that    is responsible for validation  because if we use all state object whenever any properties change in this one every time the effect Function will be re-executed
 
   const { isValid: emailIsValid } = emailState;
@@ -95,7 +98,7 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(emailState, passwordState);
+    authContext.onLogin(emailState, passwordState);
   };
 
   return (
