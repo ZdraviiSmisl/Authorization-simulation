@@ -1,6 +1,19 @@
+import React, { useRef, useImperativeHandle } from "react";
 import styels from "./Input.module.css";
 
-const Input = (props) => {
+const Input = React.forwardRef((props, ref) => {
+  const inputRef = useRef();
+
+  const active = () => {
+    inputRef.current.focus();
+  };
+
+  useImperativeHandle(ref, () => {
+    return {
+      focus: active,
+    };
+  });
+
   return (
     <div
       className={`${styels.control} ${
@@ -9,6 +22,7 @@ const Input = (props) => {
     >
       <label htmlFor={props.id}>{props.label}</label>
       <input
+        ref={inputRef}
         type={props.type || "number"}
         id={props.id || toString(Date.now()).slice(-10)}
         value={props.value}
@@ -19,6 +33,6 @@ const Input = (props) => {
       />
     </div>
   );
-};
+});
 
 export default Input;
