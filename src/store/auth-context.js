@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 
+/**
+ *React context is great for app-wide or component-wide. So essantially state that affects multiple components.It's not a replacement for componen configuretion. Don't use context for reusable components.Needs to be used the props to configure them. Otherwise we can't use them for everything else ohter than what we you configured in context
+ */
+
 //In the object we specify default value. Values of propertties  or number of  this one  can be chaged in Provdier
 const AuthContext = React.createContext({
   isLoggedIn: false,
