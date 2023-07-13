@@ -64,6 +64,7 @@ const Login = (props) => {
   const [passwordState, dispatchPassword] = useReducer(passwordReducer, {
     value: "",
     isValid: null,
+    ref,
   });
 
   const authContext = useContext(AuthContext);
@@ -94,7 +95,7 @@ const Login = (props) => {
 
   const validateEmailHandler = () => {
     dispatchEmail({ type: "INPUT_BLUR" });
-    // setEmailIsValid(emailState.includes("@"));
+    // setEmailIsValid(emailState.                                                                                                                                                                                                                                                                             includes                                                                                              ("@"));
   };
 
   const validatePasswordHandler = () => {
@@ -105,7 +106,7 @@ const Login = (props) => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const submitHandler = (event) => {
+  const submitHandler = () => {
     event.preventDefault();
     if (formIsValid) {
       authContext.onLogin(emailState, passwordState);

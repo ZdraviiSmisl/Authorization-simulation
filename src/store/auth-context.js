@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 //In the object we specify default value. Values of propertties  or number of  this one  can be chaged in Provdier
 const AuthContext = React.createContext({
   isLoggedIn: false,
-  //We you this dummy funciton as a default property(it woun't be used anywhere)just to auto-complition where we use the context
+  //We use this dummy funciton as a default property(it woun't be used anywhere)just to auto-complition where we use the context
   onLogout: () => {},
   onLogin: (email, password) => {},
 });
