@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Authorization-simulation/static/css/main.3676835e.css",
+    "main.js": "/Authorization-simulation/static/js/main.0f5c1496.js",
+    "index.html": "/Authorization-simulation/index.html",
+    "main.3676835e.css.map": "/Authorization-simulation/static/css/main.3676835e.css.map",
+    "main.0f5c1496.js.map": "/Authorization-simulation/static/js/main.0f5c1496.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3676835e.css",
+    "static/js/main.0f5c1496.js"
+  ]
+}
